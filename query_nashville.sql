@@ -13,7 +13,6 @@ FROM PortfolioProject.dbo.NashvilleHousing;
 
 -- 1. PADRONIZAÇÃO DO FORMATO DE DATA
 
-
 -- Visualizando a conversão da data
 SELECT SaleDate,
        CONVERT(DATE, SaleDate) AS SaleDateConverted
@@ -78,7 +77,6 @@ SET OwnerSplitAddress = PARSENAME(REPLACE(OwnerAddress, ',', '.'), 3),
 
 -- 5. PADRONIZAÇÃO DA COLUNA SoldAsVacant (Y/N → Yes/No)
 
-
 -- Verificando valores distintos
 SELECT DISTINCT SoldAsVacant, COUNT(*) AS Quantidade
 FROM PortfolioProject.dbo.NashvilleHousing
@@ -92,6 +90,7 @@ SET SoldAsVacant = CASE
     WHEN SoldAsVacant = 'N' THEN 'No'
     ELSE SoldAsVacant
 END;
+
 
 -- 6. REMOÇÃO DE REGISTROS DUPLICADOS
 
@@ -118,4 +117,5 @@ ALTER TABLE PortfolioProject.dbo.NashvilleHousing
 DROP COLUMN OwnerAddress,
             TaxDistrict,
             PropertyAddress,
+
             SaleDate;
