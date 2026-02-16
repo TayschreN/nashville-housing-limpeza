@@ -5,6 +5,9 @@ Este projeto tem como objetivo realizar a **limpeza, padronização e preparaç�
 O foco é transformar dados brutos em uma base estruturada, confiável e pronta para análises exploratórias e geração de insights.
 
 ---
+![Query](query.png)
+
+---
 
 ## Sobre o Dataset:
 
@@ -20,21 +23,21 @@ A base contém informações sobre vendas de imóveis na cidade de **Nashville (
 Este tipo de base simula cenários reais do mercado imobiliário, onde dados frequentemente chegam com inconsistências, campos duplicados e valores ausentes
 ---
 
-##  Processo de Limpeza e Transformação
+##  Processo de Limpeza e Transformação:
 
-### 1️⃣ Padronização de Datas
+### 1 Padronização de Datas
 - Conversão da coluna `SaleDate` para o tipo `DATE`
 - Criação da coluna `SaleDateConverted` para armazenar o valor tratado
 
 ---
 
-### 2️⃣ Tratamento de Valores Nulos
+### 2 Tratamento de Valores Nulos
 - Identificação de registros com `PropertyAddress` nulo
 - Preenchimento utilizando `JOIN` com base no `ParcelID`
 
 ---
 
-### 3️⃣ Separação de Endereços em Colunas Estruturadas
+### 3 Separação de Endereços em Colunas Estruturadas
 
 **Endereço do Imóvel:**
 - `PropertySplitAddress`
@@ -49,7 +52,7 @@ Aplicação de funções de string para extração e organização das informaç
 
 ---
 
-### 4️⃣ Padronização de Valores Categóricos
+### 4 Padronização de Valores Categóricos
 Conversão dos valores da coluna `SoldAsVacant`:
 
 - `'Y'` → `'Yes'`
@@ -59,14 +62,14 @@ Uso da estrutura `CASE` para garantir consistência nos dados.
 
 ---
 
-### 5️⃣ Remoção de Registros Duplicados
+### 5 Remoção de Registros Duplicados
 - Identificação de duplicatas utilizando `ROW_NUMBER()` com `PARTITION BY`
 - Utilização de CTE para controle
 - Exclusão segura mantendo apenas o primeiro registro válido
 
 ---
 
-### 6️⃣ Remoção de Colunas Desnecessárias
+### 6 Remoção de Colunas Desnecessárias
 Após as transformações, foram removidas colunas que não seriam mais utilizadas:
 
 - `OwnerAddress`
@@ -107,4 +110,5 @@ Reforça a importância da etapa de **Data Cleaning**, garantindo que análises 
 
 Gabriel França da Silva  
 Estudante de Análise de Dados  
+
 
