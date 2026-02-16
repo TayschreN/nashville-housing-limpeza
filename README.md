@@ -21,6 +21,7 @@ A base contém informações sobre vendas de imóveis na cidade de **Nashville (
 - Indicador *Sold As Vacant*
 
 Este tipo de base simula cenários reais do mercado imobiliário, onde dados frequentemente chegam com inconsistências, campos duplicados e valores ausentes
+
 ---
 
 ##  Processo de Limpeza e Transformação:
@@ -110,5 +111,6 @@ Reforça a importância da etapa de **Data Cleaning**, garantindo que análises 
 
 Gabriel França da Silva  
 Estudante de Análise de Dados  
+
 
 
